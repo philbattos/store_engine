@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe ProductsController do
   let!(:products) { [ Product.create(title: "title", description: "bike",
-                                       price: 2.99,    photo: nil) ] }
+                                     price: 2.99,    photo: nil) ] }
 
   describe 'GET #index' do
 

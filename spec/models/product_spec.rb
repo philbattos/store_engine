@@ -4,7 +4,7 @@ describe Product do
 
   context "when it has a title, description, and price" do
     let(:product) { Product.create(title: "bike", description: "kind of bike",
-                                price: 75.00) }
+                                   price: 75.00) }
 
     it "is valid" do
       expect(product).to be_valid

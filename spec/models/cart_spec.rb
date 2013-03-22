@@ -5,10 +5,10 @@ describe Cart do
   let(:cart) { Cart.create }
 
   let(:product1) { Product.create(title: "bike1", description: "kind of bike",
-                                price: 75.00) }
+                                  price: 75.00) }
 
   let(:product2) { Product.create(title: "bike2", description: "kind of bike",
-                                price: 100.00) }
+                                  price: 100.00) }
 
   context "when one product is added"
     it "has a quantity of 1 for that product"

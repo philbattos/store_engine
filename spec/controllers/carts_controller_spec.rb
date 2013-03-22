@@ -13,7 +13,7 @@ describe ProductsController do
 
     context "given products are added to the cart" do
       let(:products) { [ Product.create(title: "title", description: "bike",
-                                       price: 2.99,    photo: nil) ] }
+                                        price: 2.99,    photo: nil) ] }
 
       it "populates an array of products" do
         get :index
