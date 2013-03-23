@@ -1,6 +1,4 @@
 class Product < ActiveRecord::Base
-  has_many :cart_products
-  #belongs_to :cart
   attr_accessible :description, :price, :title, :photo
 
   validates :title, presence: true, uniqueness: { case_sensitive: false }
