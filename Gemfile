@@ -23,4 +23,6 @@ group :development, :test do
   # gem 'guard'
   gem 'cane'
   gem 'reek'
+  gem 'pry'
+  gem 'database_cleaner'
 end

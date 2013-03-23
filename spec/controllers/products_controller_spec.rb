@@ -4,7 +4,7 @@ describe ProductsController do
   let!(:product) { [ Product.create(title: "title", description: "bike",
                                     price: 2.99) ] }
 
-  describe 'GET #index' do
+  describe 'GET #index', js:true do
 
     it "populates an array of products" do
       get :index
