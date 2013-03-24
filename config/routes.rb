@@ -1,6 +1,8 @@
 StoreEngine::Application.routes.draw do
 
+
   resources :products
+  resource  :cart
   root to: "products#index"
 
   # The priority is based upon order of creation:

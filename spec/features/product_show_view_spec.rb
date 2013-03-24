@@ -14,4 +14,16 @@ describe 'product show page' do
     expect(page).to have_content @product.description
     expect(page).to have_content @product.price
   end
+
+  it "allows me to add a product to my cart" do
+    visit product_path(@product)
+
+    click_on "Add to cart"
+
+    expect(current_path).to eq cart_path
+
+    expect(page).to have_content @product.title
+    expect(page).to have_content @product.price
+
+  end
 end

@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+
   attr_accessible :description, :price, :title, :photo
 
   validates :title, presence: true, uniqueness: { case_sensitive: false }
