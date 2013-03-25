@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe CartProduct do
+describe CartProducts do
   pending "add some examples to (or delete) #{__FILE__}"
 end

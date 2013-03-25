@@ -27,4 +27,5 @@ group :development, :test do
   gem 'reek'
   gem 'pry'
   gem 'database_cleaner'
+  gem 'heroku'
 end

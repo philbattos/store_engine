@@ -6,6 +6,7 @@ class CreateCartProducts < ActiveRecord::Migration
 
       t.timestamps
     end
+
     add_index :cart_products, :product_id
     add_index :cart_products, :cart_id
   end

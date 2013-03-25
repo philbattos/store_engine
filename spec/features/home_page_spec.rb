@@ -9,19 +9,19 @@ describe 'home page' do
 
   it "displays the products index view" do
     visit '/'
-    expect(page).to have_content 'Products#index'
+    expect(page).to have_content 'Team Solo Store'
   end
 
-  it "should display link to product detail" do
+  it "should display button to product detail" do
     visit '/'
 
-    page.should have_link("trail bike")
+    page.should have_link("View details")
   end
 
   it "let's the user click on a product" do
     visit '/'
 
-    click_on 'trail bike'
+    click_on 'View details'
 
     expect(current_path).to eq product_path(@product)
   end

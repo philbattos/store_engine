@@ -1,6 +1,8 @@
 StoreEngine::Application.routes.draw do
 
+
   resources :products
+  resource  :cart
   root to: "products#index"
   resources :users
   resources :user_sessions, only: [ :new, :create, :destroy ]

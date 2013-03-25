@@ -2,28 +2,16 @@ require 'spec_helper'
 
 describe CartsController do
 
-  before(:each) do
-    @cart = Cart.create
+  describe "#update" do
+    it "adds product to the cart" do
+      product = Product.create(title: "bike1", description: "it has wheels",
+                               price: 699.99)
 
-    @products = [ Product.create(title: "title", description: "bike",
-                                 price: 2.99,    photo: nil) ]
-  end
+      put :update, {product_id: product.id}
 
-  describe 'GET #index' do
+      cart = Cart.last
+      expect(cart.products).to eq [product]
 
-    it "renders the :index view" do
-      get :index
-      expect(response).to render_template :index
     end
-
-    context "given products are added to the cart" do
-
-
-      it "populates an array of products" do
-        get :index
-        expect(assigns(:products)).to match_array @products
-      end
-    end
-
   end
 end
