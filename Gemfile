@@ -28,4 +28,5 @@ group :development, :test do
   gem 'pry'
   gem 'database_cleaner'
   gem 'heroku'
+  gem 'simplecov', :require => false, :group => :test
 end
