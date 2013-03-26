@@ -2,10 +2,15 @@ class CartsController < ApplicationController
 
   def update
     product = Product.find_by_id(params[:product_id])
-    shopping_cart.add_product product, params[:increase].to_i
-    # shopping_cart.remove_product product, params[:remove]
-    shopping_cart.decrease_amount product, params[:decrease].to_i
-    redirect_to product_path(product)
+    if params[:increase]
+      shopping_cart.add_product product, params[:increase].to_i
+    elsif params[:decrease]
+      shopping_cart.decrease_amount product, params[:decrease].to_i
+    else
+      shopping_cart.remove_product product
+    end
+    # redirect_to product_path(product)
+    redirect_to :back
   end
 
   def show

@@ -1,0 +1,22 @@
+<div class="myspan4" >
+  <% if @cart %>
+  <div id="shopping_cart">
+    <h3> Shopping Cart</h3></br>
+      <ul class="unstyled">
+      <% @cart.products.each do |product| %>
+        <li>
+          <%= link_to "#{product.title}", product_path(product.id) %></br>Quantity:<%= product.quantity %>
+          <%= link_to "+", cart_path( increase: 1, product_id: product.id), method: "put", class:'button', id: "increase_count"  %>
+          <%= link_to "-", cart_path( decrease: 1, product_id: product.id), method: "put", class:'button', id: "decrease_count"  %>
+          <%= link_to "Remove", cart_path(product_id: product.id),
+              method: :put, class: "btn btn-danger",
+              confirm: "Are you sure?"
+          %>
+        </li><br />
+      <% end %>
+      </ul>
+      <%= link_to( "Checkout", cart_path ) %>
+  </div>
+  <% end %>
+</div>
+

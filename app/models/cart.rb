@@ -49,11 +49,11 @@ class Cart
     save
   end
 
-  # def remove_product(product, remove)
-  #   cart_product = products.find{|existing_product| existing_product.id == product.id}
-  #   products.delete(cart_product)
-  #   save
-  # end
+  def remove_product(product)
+    cart_product = products.find{|existing_product| existing_product.id == product.id}
+    products.delete(cart_product)
+    save
+  end
 
   def save
     product_hash = Hash.new(0)
