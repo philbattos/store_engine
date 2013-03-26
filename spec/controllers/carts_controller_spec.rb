@@ -9,8 +9,12 @@ describe CartsController do
 
       put :update, {product_id: product.id}
 
-      cart = Cart.last
-      expect(cart.products).to eq [product]
+      # cart = Cart.last
+      # expect(cart.products).to eq [product]
+      cart = Cart.new(cookies)
+      cart.add_product(product)
+      added_product = cart.products.last
+      expect(added_product.product.id).to eq product.id
 
     end
   end
