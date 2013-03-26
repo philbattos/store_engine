@@ -8,5 +8,5 @@ class Product < ActiveRecord::Base
 
   validates :price, presence: :true,
             :format => { :with => /^\d+??(?:\.\d{0,2})?$/ },
-            numericality: { greater_than: 0 }
+                                  numericality: { greater_than: 0 }
 end

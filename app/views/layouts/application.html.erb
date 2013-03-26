@@ -30,15 +30,18 @@
       <a class="brand" href="/">Team Solo Store</a>
       <div class="nav-collapse collapse">
         <p class="navbar-text pull-right">
+
         <%= link_to "Cart #{@cart.products.size}", cart_path, method: :get %>
 
-          Logged in as <a href="#" class="navbar-link">Username</a>
+          <% if logged_in? %>
+            <%= "Logged in as #{current_user.username}" %>
+            <%= link_to "(logout)", logout_path %>
+          <% else %>
+            <%= link_to "Login", login_path %>
+          <% end %>
+
         </p>
-        <!-- <ul class="nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul> -->
+
       </div><!--/.nav-collapse -->
     </div>
   </div>

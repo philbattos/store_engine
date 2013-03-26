@@ -4,6 +4,8 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'rake'
+gem 'sorcery'
+
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -28,4 +30,5 @@ group :development, :test do
   gem 'heroku'
   gem 'debugger'
   gem 'pry'
+  gem 'simplecov', :require => false, :group => :test
 end
