@@ -941,14 +941,14 @@
   },
   "Cucumber Features": {
     "coverage": {
-      "/Users/dannygarcia/projects/store_engine/store_engine/config/environment.rb": [
+      "/Users/philbattos/projects/store_engine/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/config/application.rb": [
+      "/Users/philbattos/projects/store_engine/config/application.rb": [
         1,
         null,
         null,
@@ -1015,7 +1015,7 @@
         null,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/config/boot.rb": [
+      "/Users/philbattos/projects/store_engine/config/boot.rb": [
         1,
         null,
         null,
@@ -1023,7 +1023,7 @@
         null,
         1
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/config/environments/test.rb": [
+      "/Users/philbattos/projects/store_engine/config/environments/test.rb": [
         1,
         null,
         null,
@@ -1062,7 +1062,7 @@
         1,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/config/initializers/backtrace_silencers.rb": [
+      "/Users/philbattos/projects/store_engine/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -1071,7 +1071,7 @@
         null,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/config/initializers/inflections.rb": [
+      "/Users/philbattos/projects/store_engine/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -1088,14 +1088,14 @@
         null,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/config/initializers/mime_types.rb": [
+      "/Users/philbattos/projects/store_engine/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/config/initializers/secret_token.rb": [
+      "/Users/philbattos/projects/store_engine/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -1104,7 +1104,7 @@
         null,
         1
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/config/initializers/session_store.rb": [
+      "/Users/philbattos/projects/store_engine/config/initializers/session_store.rb": [
         null,
         null,
         1,
@@ -1114,7 +1114,7 @@
         null,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/config/initializers/sorcery.rb": [
+      "/Users/philbattos/projects/store_engine/config/initializers/sorcery.rb": [
         null,
         null,
         null,
@@ -1542,7 +1542,7 @@
         1,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/config/initializers/wrap_parameters.rb": [
+      "/Users/philbattos/projects/store_engine/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -1558,7 +1558,7 @@
         1,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/controllers/application_controller.rb": [
+      "/Users/philbattos/projects/store_engine/app/controllers/application_controller.rb": [
         1,
         1,
         null,
@@ -1567,46 +1567,46 @@
         1,
         null,
         1,
-        6,
-        4,
-        4,
-        4,
-        4,
-        4,
-        null,
         2,
-        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
         0,
         0,
         null,
-        2,
+        1,
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/helpers/application_helper.rb": [
+      "/Users/philbattos/projects/store_engine/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/helpers/carts_helper.rb": [
+      "/Users/philbattos/projects/store_engine/app/helpers/carts_helper.rb": [
         1,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/helpers/categories_helper.rb": [
+      "/Users/philbattos/projects/store_engine/app/helpers/categories_helper.rb": [
         1,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/helpers/products_helper.rb": [
+      "/Users/philbattos/projects/store_engine/app/helpers/products_helper.rb": [
         1,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/helpers/users_helper.rb": [
+      "/Users/philbattos/projects/store_engine/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/controllers/carts_controller.rb": [
+      "/Users/philbattos/projects/store_engine/app/controllers/carts_controller.rb": [
         1,
         null,
         1,
@@ -1621,99 +1621,107 @@
         null,
         null,
         1,
-        0,
-        null,
-        null
-      ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/models/cart.rb": [
         1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/controllers/categories_controller.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/models/category.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/controllers/products_controller.rb": [
-        1,
-        1,
-        4,
-        4,
         null,
         null,
         1,
         1,
         null,
-        null
-      ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/models/product.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
         null,
         1,
         null,
         null,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/controllers/user_sessions_controller.rb": [
+      "/Users/philbattos/projects/store_engine/app/models/cart.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/philbattos/projects/store_engine/app/controllers/categories_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/philbattos/projects/store_engine/app/models/category.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/philbattos/projects/store_engine/app/controllers/products_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/philbattos/projects/store_engine/app/models/product.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/philbattos/projects/store_engine/app/controllers/user_sessions_controller.rb": [
         1,
         1,
         null,
@@ -1733,7 +1741,7 @@
         null,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/controllers/users_controller.rb": [
+      "/Users/philbattos/projects/store_engine/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -1821,7 +1829,7 @@
         null,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/models/user.rb": [
+      "/Users/philbattos/projects/store_engine/app/models/user.rb": [
         1,
         1,
         null,
@@ -1843,7 +1851,7 @@
         null,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/models/cart_product.rb": [
+      "/Users/philbattos/projects/store_engine/app/models/cart_product.rb": [
         1,
         1,
         1,
@@ -1855,14 +1863,14 @@
         null,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/app/models/product_category.rb": [
+      "/Users/philbattos/projects/store_engine/app/models/product_category.rb": [
         1,
         1,
         1,
         null,
         null
       ],
-      "/Users/dannygarcia/projects/store_engine/store_engine/config/routes.rb": [
+      "/Users/philbattos/projects/store_engine/config/routes.rb": [
         1,
         null,
         1,
@@ -1870,6 +1878,9 @@
         1,
         1,
         1,
+        1,
+        1,
+        null,
         1,
         1,
         null,
@@ -1878,6 +1889,6 @@
         null
       ]
     },
-    "timestamp": 1364364187
+    "timestamp": 1364414873
   }
 }
