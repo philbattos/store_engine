@@ -9,7 +9,7 @@ describe CartsController do
 
       @request.env["HTTP_REFERER"] = '/cart'
 
-      put :update, {product_id: product.id}
+      put :update, {increase: 1, product_id: product.id}
 
       cart = Cart.last
       cart.add_product(product)

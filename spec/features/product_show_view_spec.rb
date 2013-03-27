@@ -20,10 +20,9 @@ describe 'product show page' do
 
     click_on "Add to cart"
 
-    expect(current_path).to eq cart_path
-
     expect(page).to have_content @product.title
     expect(page).to have_content @product.price
+    expect(page).to have_content "Quantity:1"
 
   end
 end

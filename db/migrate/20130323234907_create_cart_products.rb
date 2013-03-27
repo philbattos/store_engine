@@ -1,8 +1,8 @@
 class CreateCartProducts < ActiveRecord::Migration
   def change
     create_table :cart_products do |t|
-      t.references :product_id
-      t.references :cart_id
+      t.references :product
+      t.references :cart
       t.integer    :quantity
 
       t.timestamps

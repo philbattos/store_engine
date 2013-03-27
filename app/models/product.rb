@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  has_many :product_categories
+  has_many :categories, through: :product_categories
 
   attr_accessible :description, :price, :title, :photo
 

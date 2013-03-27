@@ -25,4 +25,14 @@ describe 'home page' do
 
     expect(current_path).to eq product_path(@product)
   end
+
+  it "let's the user click on a category" do
+    @category = Category.create(name: "Tablets")
+
+    visit '/'
+
+    click_on 'Tablets'
+
+    expect(current_path).to eq category_path(@category)
+  end
 end
