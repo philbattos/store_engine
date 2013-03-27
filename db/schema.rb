@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20130323234907) do
 
   create_table "cart_products", :force => true do |t|
     t.integer  "product_id"
     t.integer  "cart_id"
+    t.integer  "quantity"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(:version => 20130323234907) do
   add_index "cart_products", ["product_id"], :name => "index_cart_products_on_product_id"
 
   create_table "carts", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "session_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -39,8 +41,8 @@ ActiveRecord::Schema.define(:version => 20130323234907) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "username",         :null => false
-    t.string   "email"
+    t.string   "username"
+    t.string   "email",            :null => false
     t.string   "first_name"
     t.string   "last_name"
     t.string   "crypted_password"

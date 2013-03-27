@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Dmee/gSchool/projects/store_engine/config/environment.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/Dmee/gSchool/projects/store_engine/config/application.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/config/application.rb": [
         1,
         null,
         null,
@@ -75,7 +75,7 @@
         null,
         null
       ],
-      "/Users/Dmee/gSchool/projects/store_engine/config/boot.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/config/boot.rb": [
         1,
         null,
         null,
@@ -83,7 +83,7 @@
         null,
         1
       ],
-      "/Users/Dmee/gSchool/projects/store_engine/config/environments/test.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/config/environments/test.rb": [
         1,
         null,
         null,
@@ -122,7 +122,7 @@
         1,
         null
       ],
-      "/Users/Dmee/gSchool/projects/store_engine/config/initializers/backtrace_silencers.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -131,7 +131,7 @@
         null,
         null
       ],
-      "/Users/Dmee/gSchool/projects/store_engine/config/initializers/inflections.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -148,14 +148,14 @@
         null,
         null
       ],
-      "/Users/Dmee/gSchool/projects/store_engine/config/initializers/mime_types.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/Dmee/gSchool/projects/store_engine/config/initializers/secret_token.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -164,7 +164,7 @@
         null,
         1
       ],
-      "/Users/Dmee/gSchool/projects/store_engine/config/initializers/session_store.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/config/initializers/session_store.rb": [
         null,
         null,
         1,
@@ -174,7 +174,7 @@
         null,
         null
       ],
-      "/Users/Dmee/gSchool/projects/store_engine/config/initializers/sorcery.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/config/initializers/sorcery.rb": [
         null,
         null,
         null,
@@ -602,7 +602,7 @@
         1,
         null
       ],
-      "/Users/Dmee/gSchool/projects/store_engine/config/initializers/wrap_parameters.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -618,130 +618,9 @@
         1,
         null
       ],
-      "/Users/Dmee/gSchool/projects/store_engine/app/controllers/application_controller.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/app/controllers/application_controller.rb": [
         1,
         1,
-        null
-      ],
-      "/Users/Dmee/gSchool/projects/store_engine/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/Dmee/gSchool/projects/store_engine/app/helpers/carts_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/Dmee/gSchool/projects/store_engine/app/helpers/products_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/Dmee/gSchool/projects/store_engine/app/helpers/users_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/Dmee/gSchool/projects/store_engine/app/controllers/carts_controller.rb": [
-        1,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        0,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/Dmee/gSchool/projects/store_engine/app/models/cart.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null
-      ],
-      "/Users/Dmee/gSchool/projects/store_engine/app/controllers/products_controller.rb": [
-        1,
-        1,
-        null,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/Dmee/gSchool/projects/store_engine/app/models/product.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/Dmee/gSchool/projects/store_engine/app/controllers/user_sessions_controller.rb": [
-        1,
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null
-      ],
-      "/Users/Dmee/gSchool/projects/store_engine/app/controllers/users_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
         null,
         null,
         null,
@@ -754,93 +633,230 @@
         null,
         1,
         0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
         0,
         0,
         0,
         0,
         null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        0,
-        0,
         0,
         null,
         null,
         null
       ],
-      "/Users/Dmee/gSchool/projects/store_engine/app/models/user.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/dannygarcia/projects/store_engine/store_engine/app/helpers/carts_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/dannygarcia/projects/store_engine/store_engine/app/helpers/products_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/dannygarcia/projects/store_engine/store_engine/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/dannygarcia/projects/store_engine/store_engine/app/controllers/carts_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/dannygarcia/projects/store_engine/store_engine/app/models/cart.rb": [
+        1,
+        null,
         1,
         1,
         null,
-        1,
-        1,
         null,
         1,
-        null,
-        null,
         1,
-        null,
-        null,
-        1,
-        null,
-        null,
         1,
         null,
         null,
         null,
         null
       ],
-      "/Users/Dmee/gSchool/projects/store_engine/app/models/cart_product.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/app/controllers/products_controller.rb": [
         1,
         1,
+        null,
+        0,
+        null,
+        null,
         1,
-        1,
+        0,
+        null,
         null
       ],
-      "/Users/Dmee/gSchool/projects/store_engine/config/routes.rb": [
+      "/Users/dannygarcia/projects/store_engine/store_engine/app/models/product.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/dannygarcia/projects/store_engine/store_engine/app/controllers/user_sessions_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/dannygarcia/projects/store_engine/store_engine/app/controllers/users_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/dannygarcia/projects/store_engine/store_engine/app/models/user.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/dannygarcia/projects/store_engine/store_engine/app/models/cart_product.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/dannygarcia/projects/store_engine/store_engine/config/routes.rb": [
         1,
         null,
         null,
@@ -855,6 +871,6 @@
         null
       ]
     },
-    "timestamp": 1364255167
+    "timestamp": 1364334345
   }
 }

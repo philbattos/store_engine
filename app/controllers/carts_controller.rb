@@ -1,31 +1,18 @@
 class CartsController < ApplicationController
 
   def update
-    product = Product.find_by_id(params[:product_id])
+    @cart = Cart.find(current_cart_id)
     if params[:increase]
-      shopping_cart.add_product product, params[:increase].to_i
+      @cart.add_product(params[:product_id].to_i, params[:increase].to_i)
     elsif params[:decrease]
-      shopping_cart.decrease_amount product, params[:decrease].to_i
+      @cart.decrease_product(params[:product_id].to_i, params[:decrease].to_i)
     else
-      shopping_cart.remove_product product
+      @cart.remove_product(params[:product_id].to_i)
     end
-    # redirect_to product_path(product)
     redirect_to :back
   end
 
   def show
-    @cart = shopping_cart
+    @cart = Cart.find(current_cart_id)
   end
-
-  def destroy
-    shopping_cart.destroy
-    redirect_to cart_path
-  end
-
-  private
-
-  def shopping_cart
-    Cart.new(cookies)
-  end
-
 end

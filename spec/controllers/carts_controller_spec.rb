@@ -7,14 +7,13 @@ describe CartsController do
       product = Product.create(title: "bike1", description: "it has wheels",
                                price: 699.99)
 
+      @request.env["HTTP_REFERER"] = '/cart'
+
       put :update, {product_id: product.id}
 
-      # cart = Cart.last
-      # expect(cart.products).to eq [product]
-      cart = Cart.new(cookies)
+      cart = Cart.last
       cart.add_product(product)
-      added_product = cart.products.last
-      expect(added_product.product.id).to eq product.id
+      expect(cart.products).to eq [product]
 
     end
   end
