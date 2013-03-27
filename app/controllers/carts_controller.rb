@@ -14,4 +14,20 @@ class CartsController < ApplicationController
   def show
     @cart
   end
+
+  def confirmation
+    info = []
+    info << User.all
+    info << Product.all
+    @info = info
+
+    #create an order from cart contents
+      #user_id
+      #total
+      #Order.rb has_many line_items
+    #order = Order.new()
+    #create line_items from order contents
+    #show order contents
+    #@order = order
+  end
 end

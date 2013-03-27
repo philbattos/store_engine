@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(:version => 20130327013001) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "carts", ["user_id"], :name => "index_carts_on_user_id"
+
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
