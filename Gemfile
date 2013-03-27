@@ -31,4 +31,6 @@ group :development, :test do
   gem 'debugger'
   gem 'pry'
   gem 'simplecov', :require => false, :group => :test
+  gem 'selenium-webdriver', '2.31.0'
+  gem 'launchy'
 end
