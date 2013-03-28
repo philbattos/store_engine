@@ -23,4 +23,14 @@ body {
     padding-left: 19px;
     border-left: 1px solid #eee;
 }
-
+.login {
+  padding-right: 10px;
+  border-right: 1px solid #fff;
+}
+.cart {
+  padding-left: 10px;
+  border-left: 1px solid #fff;
+}
+.field {
+  text-transform: capitalize;
+}
