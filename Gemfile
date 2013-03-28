@@ -34,3 +34,8 @@ group :development, :test do
   gem 'selenium-webdriver', '2.31.0'
   gem 'launchy'
 end
+
+group :production do
+   gem 'pg'
+   gem 'heroku'
+ end
