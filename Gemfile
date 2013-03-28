@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'sqlite3'
+#gem 'sqlite3'
 gem 'jquery-rails'
 gem 'rake'
 gem 'sorcery'
@@ -33,6 +33,7 @@ group :development, :test do
   gem 'simplecov', :require => false, :group => :test
   gem 'selenium-webdriver', '2.31.0'
   gem 'launchy'
+  gem 'sqlite3', '1.3.7'
 end
 
 group :production do
