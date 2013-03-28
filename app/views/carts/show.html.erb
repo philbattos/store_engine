@@ -12,7 +12,7 @@
     <% @cart.each do |product, quantity| %>
     <tr>
       <td><%= link_to "#{product.title}", product_path(product.id) %></td>
-      <td><%= product.price %></td>
+      <td><%= number_with_precision(product.price, :precision => 2) %></td>
       <td><%= quantity %>
         <%= link_to "+", cart_path( increase: 1, product_id: product.id), method: "put", class:'button', id: "increase_count"  %>
           <%= link_to "-", cart_path( decrease: 1, product_id: product.id), method: "put", class:'button', id: "decrease_count"  %>
@@ -27,12 +27,12 @@
     <% total_price = 0 %>
     <% total_quantity = 0 %>
     <% @cart.each do |product, quantity| %>
-      <% total_price += product.price %>
+      <% total_price += (product.price * quantity) %>
       <% total_quantity += quantity %>
       <% end %>
     <tr>
       <td></td>
-      <td><b><%= total_price %></b></td>
+      <td><b><%= number_to_currency(total_price) %></b></td>
       <td><b><%= total_quantity %></b></td>
     </tr>
   </tbody>

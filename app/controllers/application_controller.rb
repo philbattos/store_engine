@@ -21,5 +21,4 @@ private
     end
     @cart = session[:shopping_cart].collect{|k,v| [Product.find(k), v]}#.reject{|product,quantity| quantity < 1}
   end
-
 end
