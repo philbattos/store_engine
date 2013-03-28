@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   validates :password, :length => { :in => 8..16 }
 
   validates :username, :uniqueness => { case_sensitive: false },
-                       :length => { :in => 2..32 }
+                       :length => { :in => 2..32 },
+                       :allow_blank => true
 
   validates :first_name, :presence => true,
                          :format => { :with => /\A[a-zA-Z]+\z/,
