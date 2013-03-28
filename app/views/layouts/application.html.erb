@@ -32,7 +32,7 @@
         <p class="navbar-text pull-right">
           <p class="cart pull-right">
             <% if @cart %>
-              <%= link_to "Cart #{@cart.products.size}", cart_path, method: :get %>
+              <%= link_to "Cart #{@cart.size}", cart_path, method: :get %>
             <% end %>
           </p>
           <p class="login pull-right">
