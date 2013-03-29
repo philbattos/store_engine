@@ -46,7 +46,3 @@ describe Admin::DashboardController do
   #   end
   # end
 end
-# , admin: true
-
-# User.create(username: "qerkgjn", email: "forpekf@example.com", first_name: "dan", last_name: "mee", password: "secrettt", password_confirmation: "secrettt")
-
