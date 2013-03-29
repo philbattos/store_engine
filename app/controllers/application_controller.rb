@@ -3,6 +3,22 @@ class ApplicationController < ActionController::Base
 
   before_filter :shopping_cart, only: [:show, :index]
 
+  def customer_order
+    if logged_in?
+      order = current_user.orders.create(status: "pending")
+      current_user.cart.items.each do |id, quantity|
+        product = Product.find(id)
+        order.line_items.create(product_id: id, quantity: quantity,
+                                price: product.price)
+      end
+      redirect_to order_path(order)
+    else
+      flash[:red] = "Oops! Seems like you're not logged in, please log in to complete your order."
+      # redirect_back_or_to(login_path)
+      redirect_to(login_path)
+    end
+  end
+
 private
 
   def shopping_cart
