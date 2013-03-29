@@ -5,6 +5,7 @@ gem 'sqlite3'
 gem 'jquery-rails'
 gem 'rake'
 gem 'sorcery'
+gem 'cancan'
 
 
 group :assets do

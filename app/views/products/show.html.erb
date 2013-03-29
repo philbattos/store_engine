@@ -8,6 +8,7 @@
     <%= @product.price %>
   </p>
 
+
   <%= link_to "Add to cart", cart_path(increase: 1, product_id: @product.id), method: :put %>
 </div>
 

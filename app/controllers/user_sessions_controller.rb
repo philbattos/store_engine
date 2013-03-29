@@ -18,6 +18,6 @@ class UserSessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to(:products, message: 'Logged out!')
+    redirect_to(root_path, message: 'Logged out!')
   end
 end
