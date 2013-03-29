@@ -1,5 +1,6 @@
 StoreEngine::Application.routes.draw do
 
+
   root to: "products#index"
 
   resources :products
@@ -12,4 +13,9 @@ StoreEngine::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy'
 
   match 'confirmation' => 'carts#confirmation'
+
+  namespace :admin do
+    get '', to: 'dashboard#index', as: '/'
+    resources :products
+  end
 end

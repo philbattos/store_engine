@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130327013001) do
+ActiveRecord::Schema.define(:version => 20130328204956) do
 
   create_table "cart_products", :force => true do |t|
     t.integer  "product_id"
@@ -60,13 +60,14 @@ ActiveRecord::Schema.define(:version => 20130327013001) do
 
   create_table "users", :force => true do |t|
     t.string   "username"
-    t.string   "email",            :null => false
+    t.string   "email",                               :null => false
     t.string   "first_name"
     t.string   "last_name"
     t.string   "crypted_password"
     t.string   "salt"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
+    t.boolean  "admin",            :default => false
   end
 
 end
