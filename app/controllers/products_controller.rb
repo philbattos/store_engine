@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @categories = Category.all
   end
 
   def update
@@ -28,6 +29,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @categories = Category.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,6 +39,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(params[:product])
+    @product.categories = params[:categories].to_a
 
     respond_to do |format|
       if @product.save

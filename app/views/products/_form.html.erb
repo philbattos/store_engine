@@ -3,9 +3,9 @@
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
       <ul>
-      <% @product.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @product.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -26,8 +26,39 @@
       <%= f.label :photo %><br />
       <%= f.text_field :photo %>
     </div>
+    <div class="field">
+      <%= f.label :category_list %><br />
+      <%= f.text_field :category_list %>
+    </div>
+    <div class="field">
+      <%= f.label :retire %>
+      <%= f.check_box :retired %>
+    </div>
+    <br/>
+    <br/>
     <div class="actions">
       <%= f.submit %>
     </div>
   </div>
 <% end %>
+
+
+
+<%if false%>
+
+      <%= select_tag(:categories, categories.eachoptions_for_select())%>
+      <p>Categories</p><p class="note">(hold shift to select multiple)</p>
+
+      <select name="categories" size="#{@categories.length}" multiple="multiple">
+
+        <% @categories.each do |category| %>
+          <option value="<%=category%>"
+             <%if @product.categories.any? { |cat| cat.name == category.name }%>
+                  selected="selected"
+             <%end%>><%=category.name%>
+          </option>
+        <%end%>
+      </select>
+
+<%end%>
+

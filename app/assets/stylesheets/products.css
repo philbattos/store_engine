@@ -1,0 +1,57 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body {
+  font-family: Ariel, Veranda, sans-serif;
+  color: #111111;
+}
+table {
+  width: 600px;
+  background-color: #eeeeee
+}
+th, td {
+  padding: 7px 10px 10px 10px;
+}
+th {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: 90%;
+  border-bottom: 2px solid #111111;
+  border-top: 1px solid #999;
+  text-align: left;
+}
+tr.content:hover {
+  background-color: #c3e6e5;
+}
+th.options {
+  text-align: center;
+}
+p.note{
+  text-transform: lowercase;
+}
+td.name {
+  text-transform: capitalize;
+}
+.money {
+  text-align: right;
+}
+a.button {
+  color: #ffffff;
+}
+a.button:hover {
+  color: #000000;
+}
+td.link {
+  text-align: center;
+  color:#ffffff;
+  background-color:#006dcc;background-image:-moz-linear-gradient(top, #0088cc, #0044cc);
+  background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+  background-image:-webkit-linear-gradient(top, #0088cc, #0044cc);
+  background-image:-o-linear-gradient(top, #0088cc, #0044cc);
+  background-image:linear-gradient(to bottom, #0088cc, #0044cc);
+  background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+  border-color:#0044cc #0044cc #002a80;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color:#0044cc;
+  filter:progid:DXImageTransform.Microsoft.gradient(enabled = false);}.btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.btn-primary.disabled,.btn-primary[disabled]{color:#ffffff;background-color:#0044cc;*background-color:#003bb3;}

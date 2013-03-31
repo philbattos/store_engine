@@ -7,9 +7,25 @@
   <p>
     <%= @product.price %>
   </p>
+  <p>
+    <% unless @product.categories[0] == nil %>
+       <td><% @product.categories.uniq.each do |category| %>
+        <%=category.name %>
+        <%end%></td>
+    <%end%>
+  </p>
+  <%if current_user && current_user.admin == true %>
+    <p>
+      Retired? <%= @product.retired %>
+    </p>
+  <%end%>
 
-
+<% unless current_user.admin == true %>
   <%= link_to "Add to cart", cart_path(increase: 1, product_id: @product.id), method: :put %>
+  <%else%>
+   <%= link_to "Products Home", products_path %>
+   <%end%>
+
 </div>
 
 <%= render '../views/mini_cart' %>

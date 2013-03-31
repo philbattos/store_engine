@@ -1,13 +1,30 @@
+<html>
+<body>
 <% if current_user && current_user.admin %>
-
-<% @products.each do |product| %>
-    <tr>
-      <td><%= product.title %></td>
+<h1>Product Management</h1><br/>
+<table>
+    <tr class="top-row">
+      <th>Product Name</th>
+      <th>Description</th>
+      <th class="money">Price</th>
+      <th>Categories</th>
+      <th>Options</th>
+    </tr>
+<% @products.each_with_index do |product, index| %>
+    <tr class="content">
+      <td class="name"><%= product.title %></td>
       <td><%= product.description %></td>
-      <td><%= product.price %></td>
-      <td><%= link_to 'Edit', edit_product_path(product) %><hr/></td>
+      <td class="money"><%= number_to_currency(product.price, :unit => "$") %></td>
+      <td><% product.categories.uniq.each do |category| %>
+        <%=category.name %>
+        <%end%></td>
+      <td class="link"><%= link_to 'Edit', edit_product_path(product), :class => "button" %></td>
+      <td><% if product.retired == true %>
+        (retired)
+        <%end%></td>
     </tr>
   <%end%>
+</table>
 
 <%else%>
 
@@ -34,5 +51,9 @@
         </div>
     </div>
 <%end%>
+</body>
+</html>
+
+
 
 

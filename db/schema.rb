@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130328204956) do
+ActiveRecord::Schema.define(:version => 20130329231416) do
 
   create_table "cart_products", :force => true do |t|
     t.integer  "product_id"
@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(:version => 20130328204956) do
 
   create_table "carts", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "session_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "items"
   end
 
   add_index "carts", ["user_id"], :name => "index_carts_on_user_id"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(:version => 20130328204956) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "orders", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
 
   create_table "product_categories", :force => true do |t|
     t.integer  "category_id"
@@ -54,8 +63,9 @@ ActiveRecord::Schema.define(:version => 20130328204956) do
     t.string   "description"
     t.float    "price"
     t.string   "photo"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "retired",     :default => false
   end
 
   create_table "users", :force => true do |t|
