@@ -1,1 +1,70 @@
-<%= @order.status %>
+<div class="span12">
+  <h1>Review your order</h1>
+  <h5>Your order status is currently: <%= @order.status.capitalize %></h5>
+  <h6>Submitted on: <%= @order.updated_at.localtime.to_date.to_formatted_s(:long_ordinal) %></h6>
+</div>
+
+<div class="span9">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Items</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @order.line_items.each do |line_item| %>
+        <% product = Product.find_by_id(line_item.product_id) %>
+        <% unit_price = line_item.unit_price / 100.0 %>
+        <% quantity = line_item.quantity %>
+        <% sub_total = number_to_currency(unit_price * quantity) %>
+        <tr>
+          <td><%= link_to "#{product.title}", product_path(product.id) %></td>
+          <td><%= number_to_currency(unit_price) %></td>
+          <td><%= quantity %></td>
+          <td><%= sub_total %></td>
+        </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+</div>
+
+<!-- Total Row -->
+<div class="span3">
+  <table class="table">
+    <tbody>
+      <% @sub_total = 0 %>
+      <% @order.line_items.each do |line_item| %>
+        <% unit_price = line_item.unit_price / 100.0 %>
+        <% quantity = line_item.quantity %>
+        <% @sub_total += unit_price * quantity %>
+      <% end %>
+        <tr>
+          <td><b>Subtotal:</b></th>
+            <span class="tab"><%= number_to_currency(@sub_total) %></span>
+        </tr>
+        <tr>
+          <td><b>Shipping & handling:</b></th>
+            <span class="tab2"><%= number_to_currency(0.00) %></span>
+        </tr>
+        <tr>
+          <td><b>Total:</b></th>
+            <span class="tab3"><b><%= number_to_currency(@sub_total) %></b></span>
+        </tr>
+    </tbody>
+  </table>
+
+    <% if @order.status == "pending" %>
+      <%= form_tag charges_path do %>
+
+        <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-description="Cart items"
+                data-amount="<%= (@sub_total * 100) %>"></script>
+      <% end %>
+    <% end %>
+</div>

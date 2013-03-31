@@ -918,6 +918,7 @@
         1,
         null,
         1,
+        1,
         null,
         1,
         1,
@@ -978,7 +979,7 @@
         null
       ]
     },
-    "timestamp": 1364532468
+    "timestamp": 1364588286
   },
   "Cucumber Features": {
     "coverage": {
@@ -1606,38 +1607,39 @@
         1,
         null,
         1,
-        1,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        0,
-        null,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
         2,
         2,
         2,
-        1,
-        0,
-        0,
         0,
         0,
         null,
-        null,
-        1,
         null,
         null,
         2,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        6,
+        6,
+        6,
+        4,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        2,
+        null,
+        null,
+        6,
         null,
         null
       ],
@@ -1683,7 +1685,7 @@
         null,
         null,
         1,
-        1,
+        2,
         null,
         null,
         1,
@@ -1749,11 +1751,12 @@
         1,
         null,
         1,
-        0,
+        2,
         null,
         null
       ],
       "/Users/dannygarcia/projects/store_engine/store_engine/app/models/order.rb": [
+        1,
         1,
         1,
         null
@@ -1761,8 +1764,8 @@
       "/Users/dannygarcia/projects/store_engine/store_engine/app/controllers/products_controller.rb": [
         1,
         1,
-        1,
-        1,
+        2,
+        2,
         null,
         null,
         1,
@@ -1792,8 +1795,8 @@
         null,
         null,
         1,
-        1,
-        1,
+        2,
+        2,
         null,
         0,
         0,
@@ -1899,6 +1902,7 @@
         1,
         null,
         1,
+        1,
         null,
         1,
         1,
@@ -1931,6 +1935,11 @@
         null,
         null
       ],
+      "/Users/dannygarcia/projects/store_engine/store_engine/app/models/line_item.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/dannygarcia/projects/store_engine/store_engine/app/models/product_category.rb": [
         1,
         1,
@@ -1959,6 +1968,6 @@
         null
       ]
     },
-    "timestamp": 1364532378
+    "timestamp": 1364684253
   }
 }

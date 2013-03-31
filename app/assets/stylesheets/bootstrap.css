@@ -31,6 +31,25 @@ body {
   padding-left: 10px;
   border-left: 1px solid #fff;
 }
+
+.my_account {
+  padding-left: 10px;
+  border-left: 1px solid #fff;
+  padding-right: 10px;
+  border-right: 1px solid #fff;
+}
+
 .field {
   text-transform: capitalize;
 }
+
+.tab {
+  margin-left: 90px;
+}
+.tab2 {
+  margin-left: 10px;
+}
+.tab3 {
+  margin-left: 110px;
+}
+
