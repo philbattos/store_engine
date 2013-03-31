@@ -5,6 +5,7 @@ gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'rake'
 gem 'sorcery'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 
 group :assets do

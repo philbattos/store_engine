@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
   has_one :cart
+  has_many :orders
 
   validates_confirmation_of :password, message: "should match confirmation", if: :password
   validates :password, :length => { :in => 8..16 }
