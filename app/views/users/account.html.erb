@@ -1,0 +1,31 @@
+<div class="span12" >
+  <h1>My account</h1><br />
+</div>
+
+  <div class="span9">
+    <h4>Recent Orders</h4>
+    <table class="table table-hover table-bordered">
+      <thead>
+      <tr>
+        <th>Orders by date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+      <tbody>
+        <% order_num = 0 %>
+        <% @orders.each do |order| %>
+          <% unless order.status == "pending" %>
+            <tr>
+              <td><%= link_to "#{order.updated_at.localtime.to_date.to_formatted_s(:long_ordinal)}",
+                      order_path(order)
+                   %>
+              </td>
+              <td><%= order.status %>
+            </tr>
+          <% end %>
+        <% end %>
+
+      </tbody>
+    </table>
+  </div>

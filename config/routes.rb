@@ -16,6 +16,7 @@ StoreEngine::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy'
   match 'confirmation' => 'carts#confirmation'
   match 'review_order' => 'application#customer_order'
+  match 'account' => 'users#account'
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
