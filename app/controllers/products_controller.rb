@@ -14,10 +14,15 @@ class ProductsController < ApplicationController
   end
 
   def update
+    category_ids = params[:product].delete(:categories)
     @product = Product.find(params[:id])
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
+
+        categories = category_ids.collect{ |id| Category.find_by_id(id) }.compact
+        @product.categories = categories
+
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else

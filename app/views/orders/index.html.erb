@@ -1,0 +1,65 @@
+  <h1>Listing orders</h1>
+
+<h5>Total pending: <%=@orders.select{ |order| order.status["pending"]}.length %></h5>
+<h5>Total cancelled: <%=@orders.select{ |order| order.status["cancelled"]}.length %></h5>
+<h5>Total paid: <%=@orders.select{ |order| order.status["paid"]}.length %></h5>
+<h5>Total shipped: <%=@orders.select{ |order| order.status["shipped"]}.length %></h5>
+<h5>Total returned: <%=@orders.select{ |order| order.status["returned"]}.length %></h5>
+
+
+<table>
+    <tr class="top-row">
+      <th>Order ID</th>
+      <th>User ID</th>
+      <th>Status</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+      <th></th>
+      <th>Options</th>
+    </tr>
+
+  <% @orders.each do |order| %>
+    <tr class="content">
+      <td><%= order.id %></td>
+      <td><%= order.user_id %></td>
+      <td><%= order.status %></td>
+      <td><%= order.created_at %></td>
+      <td><%= order.updated_at %></td>
+      <td><%=link_to "Details", order_path(order.id)%></td>
+
+
+      <td>
+          <% case order.status %>
+          <% when "pending" %>
+            <%= link_to "Cancel Order", order_path(order, :order => {:status => "canceled" }), :method => :put %>
+          <% when "shipped" %>
+            <%= link_to "Mark As Returned", order_path(order, :order => {:status => "returned" }), :method => :put %>
+          <% when "paid" %>
+            <%= link_to "Mark As Shipped", order_path(order, :order => {:status => "shipped" }), :method => :put %>
+          <% end %>
+          <%= link_to 'Edit', edit_order_path(order) %>
+          <%= link_to 'Destroy', order_path(order), :method => :delete, :confirm => 'Are you sure?' %>
+      </td>
+
+
+
+    </tr>
+  <% end %>
+</table>
+
+
+
+
+<%if false%>
+
+        <form action="edit_orders_path">
+          <select name="status">
+            <%if order.status == "pending" %>
+              <option value="cancel">cancel</option>
+            <%elsif order.status == "shipped"%>
+              <option value="returned">mark as returned</option>
+            <%elsif order.status == "paid"%>
+              <option value="shipped">mark as shipped</option>
+            <%end%>
+
+            <%end%>

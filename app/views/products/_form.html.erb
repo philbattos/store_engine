@@ -27,8 +27,10 @@
       <%= f.text_field :photo %>
     </div>
     <div class="field">
-      <%= f.label :category_list %><br />
-      <%= f.text_field :category_list %>
+      <%= f.label :categories %><br />
+      <%=collection_select(:product, :categories, Category.all, :id, :name, { selected: @product.category_ids }, { multiple: true, size: 4 })%>
+
+
     </div>
     <div class="field">
       <%= f.label :retire %>
@@ -60,5 +62,9 @@
         <%end%>
       </select>
 
+
+      <%= f.text_field :category_list %>
+
+  <%=collection_select(:product, :categories, Category.all, :id, :name, { selected: @product.category_ids }, { multiple: true, size: 4 })%>
 <%end%>
 
