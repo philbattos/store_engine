@@ -13,7 +13,8 @@ class ApplicationController < ActionController::Base
       current_user.cart.items.each do |id, quantity|
         product = Product.find(id)
         order.line_items.create(product_id: id, quantity: quantity,
-                                price: product.price)
+                                unit_price: product.price,
+                                )
       end
       redirect_to order_path(order)
     else

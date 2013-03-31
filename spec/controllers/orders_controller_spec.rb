@@ -8,18 +8,21 @@ describe OrdersController do
       @order1 = Order.create(status: "pending")
     end
 
-    it "assigns the requested order to @order" do
+    context "given a user is logged in" do
 
-      get :show, id: @order1.id
+      it "assigns the requested order to @order" do
 
-      expect(assigns(:order)).to eq @order1
-    end
+        get :show, id: @order1.id
 
-    it "renders the show template" do
+        expect(assigns(:order)).to eq @order1
+      end
 
-      get :show, id: @order1.id
+      it "renders the show template" do
 
-      expect(response).to render_template :show
+        get :show, id: @order1.id
+
+        expect(response).to render_template :show
+      end
     end
   end
 end
