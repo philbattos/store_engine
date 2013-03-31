@@ -15,7 +15,7 @@
 
           <h2><%= product.title %></h2>
           <p><%= product.description %></p>
-          <p><%= product.price %><p>
+          <p><%= number_to_currency(product.price / 100) %><p>
           <p> <%= link_to "View details »", product_path(product), class: "btn" %></p>
           <!-- <p><a class="btn" href="#">View details »</a></p> -->
       </div><!--/span-->

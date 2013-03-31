@@ -85,7 +85,8 @@ class UsersController < ApplicationController
   end
 
   def account
-    user = User.find(session[:user_id])
-    @orders = user.orders
+    # user = User.find(session[:user_id])
+    # @orders = user.orders
+    @orders = current_user.orders
   end
 end
