@@ -17,4 +17,5 @@ StoreEngine::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy'
 
   match 'review_order' => 'application#customer_order'
+  match 'account' => 'users#account'
 end
