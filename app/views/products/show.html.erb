@@ -1,4 +1,12 @@
-<div class="span8" >
+<% if @product.photo %>
+  <div class="span12 text-center">
+    <%= image_tag(@product.photo, size: "700x800")%>
+    <%-# image_tag(@product.photo, size: "200x300")%>
+  </div>
+<% end %>
+
+<div class="span9" >
+
   <h1><%= @product.title %></h1>
 
   <p>
@@ -13,17 +21,19 @@
   %>
 </div>
 
+<div class="span3">
 <%= render '../views/mini_cart' %>
-
+</div>
 
 <% if logged_in? %>
 
   <div class="span6">
-    <h4>Quick checkout</h4>
+    <h4>Two click checkout</h4>
 
     <%-# if session[:order_id] == nil %>
 
-      <%= form_tag charges_path, :onclick => "return confirm('Are you sure?')" do %>
+      <%-#= form_tag charges_path, :onclick => "return confirm('Are you sure?')" do %>
+      <%= form_tag charges_path do %>
 
         <% @order = current_user.orders.create %>
         <% @order.line_items.create(product_id: @product.id, quantity: 1, unit_price: @product.price) %>
@@ -37,8 +47,3 @@
     <%-# end %>
   </div>
 <% end %>
-
-
-
-  <%-#= link_to "Two clicks, done!", review_order_path, class: "btn btn-success" %>
-  <%-#= render '../views/stripe_payment' %>
