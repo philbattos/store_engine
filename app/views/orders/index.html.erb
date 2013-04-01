@@ -1,17 +1,39 @@
   <h1>Listing orders</h1>
 
-<h5>Total pending: <%=@orders.select{ |order| order.status["pending"]}.length %></h5>
-<h5>Total cancelled: <%=@orders.select{ |order| order.status["cancelled"]}.length %></h5>
-<h5>Total paid: <%=@orders.select{ |order| order.status["paid"]}.length %></h5>
-<h5>Total shipped: <%=@orders.select{ |order| order.status["shipped"]}.length %></h5>
-<h5>Total returned: <%=@orders.select{ |order| order.status["returned"]}.length %></h5>
+<h5>Total pending:   <%=@orders.select{ |order| order.status["pending"]}.length %></h5>
+<h5>Total canceled:  <%=@orders.select{ |order| order.status["canceled"]}.length %></h5>
+<h5>Total paid:      <%=@orders.select{ |order| order.status["paid"]}.length %></h5>
+<h5>Total shipped:   <%=@orders.select{ |order| order.status["shipped"]}.length %></h5>
+<h5>Total returned:  <%=@orders.select{ |order| order.status["returned"]}.length %></h5>
 
+
+<%if false%>
+<div id="filters">
+  <%= link_to "All: #{Order.all.count}", orders_path %>
+  <% @filters.each do |filter| %>
+    <%= link_to "#{filter.status.capitalize}: #{@statuses[filter.status]}", orders_path(:filter => filter.status) %>
+  <% end %>
+</div>
+<%end%>
 
 <table>
     <tr class="top-row">
       <th>Order ID</th>
       <th>User ID</th>
-      <th>Status</th>
+      <th>Status
+        <form action="orders">
+          <fieldset>
+         <p> <select name="filters" multiple="multiple" style="top: 0px;">
+                <% @filters.each do |filter| %>
+                    <option value="filter"><%=filter.status.capitalize%></option>
+                <%end%>
+             </select></p>
+             <div class="submit">
+                <input type="submit" value="Filter">
+             </div>
+           </fieldset>
+        </form>
+      </th>
       <th>Created At</th>
       <th>Updated At</th>
       <th></th>
@@ -26,23 +48,17 @@
       <td><%= order.created_at %></td>
       <td><%= order.updated_at %></td>
       <td><%=link_to "Details", order_path(order.id)%></td>
-
-
       <td>
-          <% case order.status %>
-          <% when "pending" %>
+          <% if order.status == "pending" %>
             <%= link_to "Cancel Order", order_path(order, :order => {:status => "canceled" }), :method => :put %>
-          <% when "shipped" %>
+          <% elsif order.status ==  "shipped" %>
             <%= link_to "Mark As Returned", order_path(order, :order => {:status => "returned" }), :method => :put %>
-          <% when "paid" %>
+          <% elsif order.status == "paid" %>
             <%= link_to "Mark As Shipped", order_path(order, :order => {:status => "shipped" }), :method => :put %>
           <% end %>
           <%= link_to 'Edit', edit_order_path(order) %>
           <%= link_to 'Destroy', order_path(order), :method => :delete, :confirm => 'Are you sure?' %>
       </td>
-
-
-
     </tr>
   <% end %>
 </table>
@@ -52,14 +68,6 @@
 
 <%if false%>
 
-        <form action="edit_orders_path">
-          <select name="status">
-            <%if order.status == "pending" %>
-              <option value="cancel">cancel</option>
-            <%elsif order.status == "shipped"%>
-              <option value="returned">mark as returned</option>
-            <%elsif order.status == "paid"%>
-              <option value="shipped">mark as shipped</option>
-            <%end%>
 
-            <%end%>
+
+<%end%>

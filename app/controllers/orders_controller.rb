@@ -13,6 +13,10 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all
+    if params[:filter]
+      @orders = Order.where(:status => params[:filter])
+    end
+      @filters = Order.select(:status).uniq
 
     respond_to do |format|
       format.html # index.html.erb
