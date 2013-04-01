@@ -8,6 +8,7 @@ require 'rspec/autorun'
 require 'capybara/rails'
 require 'capybara/rspec'
 require 'database_cleaner'
+# require 'support/login_macros'
 
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}

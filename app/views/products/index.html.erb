@@ -1,35 +1,72 @@
 <div class="container-fluid">
   <div class="row-fluid">
-    <%= render :partial => '../views/categories', :locals => {:categories => @categories} %>
 
-    <div class="span9">
-      <div class="hero-unit">
-        <h1>Team Solo Tech</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <!-- <p><a href="#" class="btn btn-primary btn-large">Learn more »</a></p> -->
-      </div>
-      <%-#= render '../views/carousel' %>
+    <% if current_user && current_user.admin %>
+      <h1>Product Management</h1><br/>
+      <table>
+          <tr class="top-row">
+            <th>Product Name</th>
+            <th>Description</th>
+            <th class="money">Price</th>
+            <th>Categories</th>
+            <th>Options</th>
+          </tr>
+        <% @products.each_with_index do |product, index| %>
+          <tr class="content">
+            <td class="name"><%= product.title %></td>
+            <td><%= product.description %></td>
+            <td class="money"><%= number_to_currency(product.price, :unit => "$") %></td>
+            <td><% product.categories.uniq.each do |category| %>
+              <%=category.name %>
+              <%end%></td>
+            <td class="link"><%= link_to 'Edit', edit_product_path(product), :class => "button" %></td>
+            <td><% if product.retired == true %>
+              (retired)
+              <%end%></td>
+          </tr>
+        <%end%>
+      </table>
+    <%else%>
+      <%= render :partial => '../views/categories', :locals => {:categories => @categories} %>
 
-      <div class="row-fluid">
-        <ul class="thumbnails">
-          <% @products.each do |product| %>
-            <li class="span4" >
-              <div class="thumbnail">
-                <%= image_tag(product.photo, size: "300x200")%>
-                <div class="caption">
-                  <h3><%= product.title %></h3>
-                  <p><%= number_to_currency(product.price / 100) %></p>
-                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                  <p> <%= link_to "View details »", product_path(product), class: "btn btn-primary" %></p>
+      <div class="span9">
+        <div class="hero-unit">
+          <h1>Team Solo Tech</h1>
+          <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        </div>
+
+        <div class="row-fluid">
+          <ul class="thumbnails">
+            <% @products.each do |product| %>
+              <li class="span4" >
+                <div class="thumbnail">
+                  <%= image_tag(product.photo, size: "300x200")%>
+                  <div class="caption">
+                    <h3><%= product.title %></h3>
+                    <p><%= number_to_currency(product.price / 100) %></p>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p> <%= link_to "View details »", product_path(product), class: "btn btn-primary" %></p>
+                  </div>
                 </div>
-              </div>
-            </li>
-          <% end %>
-        </ul>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
-    </div>
+    <%end%>
   </div>
 </div><!--/.fluid-container-->
+
+
+
+
+
+
+
+
+
+
+
 
 
 

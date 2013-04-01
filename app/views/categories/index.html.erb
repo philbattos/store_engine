@@ -1,0 +1,32 @@
+  <h1>Listing categories</h1>
+
+  <table>
+    <tr class="top-row">
+      <th>Name</th>
+      <th>Products</th>
+      <th class="options" colspan="3">options</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @categories.uniq.each do |category| %>
+    <tr class="content">
+      <td class="name"><%= category.name %></td>
+
+      <% unless category.products.uniq[0] == nil %>
+        <td class="name"><%= category.products.uniq[0].title %></td>
+        <%else%>
+      <td></td>
+      <%end%>
+
+      <td class="link"><%= link_to 'Show', category, :class => "button"  %></td>
+      <td class="link"><%= link_to 'Remove Products', categories_path, :class => "button"  %></td>
+      <td class="link"><%= link_to 'Delete Category', category, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button"  %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+  <%= link_to 'New Category', new_category_path %>
+

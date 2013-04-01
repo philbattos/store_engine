@@ -15,15 +15,31 @@
   <p>
     <%= number_to_currency(@product.price / 100) %>
   </p>
-
-  <%= link_to "Add to cart", cart_path(increase: 1, product_id: @product.id), method: :put,
-      class: "btn btn-primary"
-  %>
+  <p>
+    <% unless @product.categories[0] == nil %>
+       <td><% @product.categories.uniq.each do |category| %>
+        <%=category.name %>
+        <%end%></td>
+    <%end%>
+  </p>
+  <%if current_user && current_user.admin == true %>
+    <p>
+      Retired? <%= @product.retired %>
+    </p>
+  <%end%>
 </div>
 
 <div class="span3">
 <%= render '../views/mini_cart' %>
 </div>
+
+<% unless current_user.admin == true %>
+  <%= link_to "Add to cart", cart_path(increase: 1, product_id: @product.id), method: :put,
+      class: "btn btn-primary"
+  %>
+<%else%>
+   <%= link_to "Products Home", products_path %>
+<%end%>
 
 <% if logged_in? %>
 
@@ -47,3 +63,5 @@
     <%-# end %>
   </div>
 <% end %>
+
+
