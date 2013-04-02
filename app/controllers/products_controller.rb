@@ -43,8 +43,10 @@ class ProductsController < ApplicationController
   end
 
   def create
+    category_ids = params[:product].delete(:categories)
+    categories = category_ids.collect{ |id| Category.find_by_id(id) }.compact
     @product = Product.new(params[:product])
-    @product.categories = params[:categories].to_a
+    @product.categories = categories
 
     respond_to do |format|
       if @product.save

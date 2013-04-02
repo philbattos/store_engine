@@ -54,3 +54,18 @@ body {
 .tab3 {
   margin-left: 110px;
 }
+
+.thumbnails li:nth-child(4n+4) {
+  margin-left: 0px;
+}
+
+.thumbnail > img {
+    display: block;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    border: none;
+}
+
+

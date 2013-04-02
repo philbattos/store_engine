@@ -1,0 +1,21 @@
+<div class="span12">
+  <h1>Customer order</h1>
+  <h5>Customer order status is currently: <%= @order.status.capitalize %></h5>
+  <% if @order.status == "shipped" || @order.status == "canceled" %>
+    <h6>This order was <%= "#{@order.status}" %> on
+      <%= "#{@order.updated_at.localtime.to_date.to_formatted_s(:long_ordinal)}" %>
+    </h6>
+  <% else %>
+    <h6>Submitted on: <%= @order.updated_at.localtime.to_date.to_formatted_s(:long_ordinal) %></h6>
+  <% end %>
+</div>
+
+<div class="span12">
+  <h3>Purchaser info</h3>
+  <% purchaser = User.find(@order.user_id) %>
+
+  <p><b>Name:</b> <%= purchaser.first_name %>
+     <%= purchaser.last_name %>
+  </p>
+  <p><b>Email:</b> <%= purchaser.email %></p>
+</div>

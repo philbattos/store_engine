@@ -1,24 +1,35 @@
 <% unless current_user && current_user.admin %>
-<div class="myspan4" >
-  <% if @cart  %>
-  <div id="shopping_cart">
-    <h3> Shopping Cart</h3></br>
-      <ul class="unstyled">
-      <% @cart.each do |product, quantity| %>
-        <li>
-          <%= link_to "#{product.title}", product_path(product.id) %></br>Quantity:<%= quantity %>
-          <%= link_to "+", cart_path( increase: 1, product_id: product.id), method: "put", class:'button', id: "increase_count"  %>
-          <%= link_to "-", cart_path( decrease: 1, product_id: product.id), method: "put", class:'button', id: "decrease_count"  %>
-          <%= link_to "Remove", cart_path(product_id: product.id),
-              method: :put, class: "btn btn-danger",
-              confirm: "Are you sure?"
-          %>
-        </li><br />
-      <% end %>
-      </ul>
-      <%= link_to( "Checkout", cart_path, class: "btn btn-primary" ) %>
+  <div class="myspan4" >
+    <% if @cart  %>
+      <div id="shopping_cart">
+        <h3> Shopping Cart</h3>
+        <h5> Quick view</h5></br>
+          <ul class="unstyled">
+          <% @cart.each do |product, quantity| %>
+            <li>
+              <%= link_to "#{product.title}", product_path(product.id) %></br>Quantity:<%= quantity %>
+              <%= link_to "+", cart_path( increase: 1, product_id: product.id), method: "put", class:'button' %>
+              <%= link_to "-", cart_path( decrease: 1, product_id: product.id), method: "put", class:'button' %>
+              <%= link_to "Remove", cart_path(product_id: product.id),
+                  method: :put, class: "btn btn-danger",
+                  confirm: "Are you sure?"
+              %>
+            </li><br />
+          <% end %>
+          </ul>
+          <p><%= link_to( "View cart", cart_path, class: "btn btn-primary" ) %></p><hr>
+
+        <% if logged_in? %>
+            <h4>Two click checkout</h4>
+              <%= form_tag charges_path do %>
+                <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                        data-description="Cart items"
+                        data-amount="<%= (@product.price ) %>"></script>
+              <% end %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
 <%end%>
 

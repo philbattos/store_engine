@@ -40,12 +40,11 @@
             <% @products.each do |product| %>
               <li class="span4" >
                 <div class="thumbnail">
-                  <%= image_tag(product.photo, size: "300x200")%>
+                  <%= image_tag(product.photo, class: "thumbnail")%>
                   <div class="caption">
                     <h3><%= product.title %></h3>
                     <p><%= number_to_currency(product.price / 100) %></p>
-                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                    <p> <%= link_to "View details »", product_path(product), class: "btn btn-primary" %></p>
+                    <%= link_to "View details »", product_path(product), class: "btn btn-primary" %></p>
                   </div>
                 </div>
               </li>
