@@ -28,7 +28,7 @@
     </div>
     <div class="field">
       <%= f.label :categories %><br />
-      <%=collection_select(:product, :categories, Category.all, :id, :name, { selected: @product.category_ids }, { multiple: true, size: 4 })%>
+      <%=collection_select(:product, :category_ids, Category.all, :id, :name, { selected: @product.category_ids }, { multiple: true, size: 4 })%>
     </div>
     <div class="field">
       <%= f.label :retire %>

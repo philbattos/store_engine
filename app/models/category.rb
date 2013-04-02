@@ -6,10 +6,4 @@ class Category < ActiveRecord::Base
   def to_s
     name
   end
-
-  def create
-    @category = Category.find_by_name(name.capitalize)
-    @category ||= Category.new(name.capitalize)
-    @category.save
-  end
 end
