@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
 
-  attr_accessible :retired, :categories, :category_list
+  attr_accessible :retired, :categories, :category_list, :category_ids
 
   has_many :product_categories
   has_many :categories, through: :product_categories

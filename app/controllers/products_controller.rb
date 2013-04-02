@@ -47,14 +47,14 @@ class ProductsController < ApplicationController
   end
 
   def create
-    category_ids = params[:product].delete(:categories)
+    category_ids = params[:product].delete(:category_ids) || []
     categories = category_ids.collect{ |id| Category.find_by_id(id) }.compact
     @product = Product.new(params[:product])
     @product.categories = categories
 
     respond_to do |format|
       if @product.save
-        # flash.notice = "New Product '#{@product.title}' Created!"
+        flash[:green] = "Product successfully created!"
         format.html { redirect_to "/products/new", notice: 'Product was successfully created.' }
         format.json { render json: @product, status: :created, location: @product }
       else
