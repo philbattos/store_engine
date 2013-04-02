@@ -1,10 +1,14 @@
-<%if false%>
 
 
 <html>
 <body>
+
+
 <% if current_user && current_user.admin %>
 <h1>Product Management</h1><br/>
+
+<p class="admin_home"><%= link_to "Admin Home", admin_path %></p>
+
 <table>
     <tr class="top-row">
       <th>Product Name</th>
@@ -26,10 +30,12 @@
         (retired)
         <%end%></td>
     </tr>
+
   <%end%>
 </table>
 
 <%else%>
+  <p class="flash"><%= flash.notice %></p>
 
     <div class="container-fluid">
     <div class="row-fluid">
@@ -58,8 +64,9 @@
 </html>
 
 
-<%end%>
 
+
+<%if false%>
 
 <div class="container-fluid">
   <div class="row-fluid">
@@ -95,4 +102,5 @@
 </div><!--/.fluid-container-->
 
 
+<%end%>
 
