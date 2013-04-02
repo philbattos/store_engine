@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  load_and_authorize_resource
+  skip_authorize_resource :only => [:index, :show]
+
   def index
     @products = Product.all
     @categories = Category.all
@@ -20,9 +23,10 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.update_attributes(params[:product])
 
+        flash.notice = "'#{@product.title}' Updated!"
+
         categories = category_ids.collect{ |id| Category.find_by_id(id) }.compact
         @product.categories = categories
-
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
@@ -50,6 +54,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
+        # flash.notice = "New Product '#{@product.title}' Created!"
         format.html { redirect_to "/products/new", notice: 'Product was successfully created.' }
         format.json { render json: @product, status: :created, location: @product }
       else

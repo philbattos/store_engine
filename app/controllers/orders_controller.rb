@@ -15,12 +15,11 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = Order.all
     if params[:filter]
       @orders = Order.where(:status => params[:filter])
+    else
+      @orders = Order.all
     end
-      @filters = Order.select(:status).uniq
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @categories }

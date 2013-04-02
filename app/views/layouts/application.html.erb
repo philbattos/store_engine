@@ -19,6 +19,8 @@
 </head>
 
 <body>
+<p class="flash"><%= flash.notice %></p>
+
   <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container-fluid">
@@ -32,12 +34,13 @@
         <p class="navbar-text pull-right">
 
           <p class="cart pull-right">
-            <% if @cart %>
-              <%= link_to "Cart #{@cart.size}", cart_path, method: :get %>
+            <% unless current_user && current_user.admin == true %>
+              <% if @cart %>
+                <%= link_to "Cart #{@cart.size}", cart_path, method: :get %>
+              <% end %>
             <% end %>
           </p>
 
-          <% if logged_in? %>
           <p class="my_account pull-right">
             <% if logged_in? %>
               <% if current_user.admin == true %>
@@ -47,7 +50,6 @@
               <% end %>
             <% end %>
           </p>
-          <% end %>
 
           <p class="login pull-right">
             <% if logged_in? %>

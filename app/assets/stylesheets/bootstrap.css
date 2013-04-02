@@ -4,11 +4,9 @@ body {
   padding-top: 60px;
   padding-bottom: 40px;
 }
-
 .sidebar-nav {
   padding: 9px 0;
 }
-
 @media (max-width: 980px) {
   /* Enable use of floated navbar text */
   .navbar-text.pull-right {
@@ -17,7 +15,6 @@ body {
     padding-right: 5px;
   }
 }
-
 .myspan4 {
     margin-left: 0;
     padding-left: 19px;
@@ -31,7 +28,6 @@ body {
   padding-left: 10px;
   border-left: 1px solid #fff;
 }
-
 .my_account {
   padding-left: 10px;
   border-left: 1px solid #fff;
@@ -54,11 +50,9 @@ body {
 .tab3 {
   margin-left: 110px;
 }
-
 .thumbnails li:nth-child(3n+4) {
   margin-left: 0px;
 }
-
 .thumbnail > img {
     display: block;
     height: 150px;
