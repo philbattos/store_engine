@@ -36,7 +36,7 @@ mac_pro = Product.create(title: "Apple MacBook Pro",
 apple_tv = Product.create(title: "Apple TV",
                           description: "1080p HD programming, including iTunes movies and TV shows, Netflix, Vimeo, photos and more in HD. Access your purchased movies, TV shows, and music with iTunes Match right from iCloud.",
                           price: 9999.0,
-                          photo: "https://s3.amazonaws.com/store_engine_product_photos/Screen+Shot+2013-03-31+at+6.29.51+PM.png"
+                          photo: "https://s3.amazonaws.com/store_engine_product_photos/Screen+Shot+2013-03-31+at+6.29.51+PM.png",
                           retired: false
                          )
 xbox    = Product.create(title: "Xbox 360",
