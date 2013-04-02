@@ -41,14 +41,15 @@ apple_tv = Product.create(title: "Apple TV",
                          )
 xbox    = Product.create(title: "Xbox 360",
                          description: "Xbox 360 has blockbuster games, HD movies and controller.Built-in Wi-Fi for easy connection to Xbox LIVE. Super quiet with sleek new design plus matching controller. Ready for the controller-free fun of Kinect.",
-                         price: 20000.0
+                         price: 20000.0,
                          photo: "https://s3.amazonaws.com/store_engine_product_photos/xbox.png",
                          retired: false
                          )
 bose    = Product.create(title: "Bose® TV Sound System",
                          description: "Love watching TV? Well, it’s about to get dramatically better. The Bose Solo TV sound system reveals much more of the depth and detail you’re meant to hear in your favorite programs. The kind of sound most flat panel TVs simply cannot reproduce from their internal speakers. The Bose Solo sound system fills a room with rich, detailed sound. And with just one speaker and one connection, it couldn’t be easier.",
-                         price: 39900.0
+                         price: 39900.0,
                          photo: "https://s3.amazonaws.com/store_engine_product_photos/bose.jpg",
-                         retired: false)
+                         retired: false
+                         )
 
 
