@@ -1,0 +1,11 @@
+<div class="span12">
+  <h1>Review your order</h1>
+  <h5>Your order status is currently: <%= @order.status.capitalize %></h5>
+  <% if @order.status == "shipped" || @order.status == "canceled" %>
+    <h6>Your order was <%= "#{@order.status}" %> on
+      <%= "#{@order.updated_at.localtime.to_date.to_formatted_s(:long_ordinal)}" %>
+    </h6>
+  <% else %>
+    <h6>Submitted on: <%= @order.updated_at.localtime.to_date.to_formatted_s(:long_ordinal) %></h6>
+  <% end %>
+</div>

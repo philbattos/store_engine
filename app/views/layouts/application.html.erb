@@ -41,13 +41,15 @@
             <% end %>
           </p>
 
-          <% if logged_in? && current_user.admin == false %>
           <p class="my_account pull-right">
             <% if logged_in? %>
-              <%= link_to "My account", account_path %>
+              <% if current_user.admin == true %>
+                <%= link_to "Dashboard", admin_path %>
+              <% elsif current_user.admin == false %>
+                <%= link_to "My account", account_path %>
+              <% end %>
             <% end %>
           </p>
-          <% end %>
 
           <p class="login pull-right">
             <% if logged_in? %>

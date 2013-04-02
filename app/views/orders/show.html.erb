@@ -1,8 +1,8 @@
-<div class="span12">
-  <h1>Review your order</h1>
-  <h5>Your order status is currently: <%= @order.status.capitalize %></h5>
-  <h6>Submitted on: <%= @order.updated_at.localtime.to_date.to_formatted_s(:long_ordinal) %></h6>
-</div>
+<% if current_user.admin == true %>
+  <%= render "../views/admin_order", :locals => {:order => @order} %>
+<% else %>
+  <%= render "../views/user_order", :locals => {:order => @order} %>
+<% end %>
 
 <div class="span9">
   <table class="table table-hover">

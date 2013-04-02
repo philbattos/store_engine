@@ -1,7 +1,6 @@
 <% if @product.photo %>
   <div class="span12 text-center">
     <%= image_tag(@product.photo, size: "700x800")%>
-    <%-# image_tag(@product.photo, size: "200x300")%>
   </div>
 <% end %>
 
@@ -28,48 +27,23 @@
     </p>
   <%end%>
 
-<%if false%>
+  <% unless current_user && current_user.admin == true %>
+    <% if @product.retired == false %>
+      <%= link_to "Add to cart", cart_path(increase: 1, product_id: @product.id), method: :put,
+          class: "btn btn-primary"
+      %>
+    <% end %>
+    <% else %>
+      <%= link_to "Products Home", products_path %>
+  <% end %>
 
-<% unless current_user.admin == true %>
-  <%= link_to "Add to cart", cart_path(increase: 1, product_id: @product.id), method: :put %>
-  <%else%>
-   <%= link_to "Products Home", products_path %>
-   <%end%>
-
+  <% if @product.retired == true %>
+    <h5>Sorry, but this product is no longer available.</h5>
+  <% end %>
 </div>
 
-<%= render '../views/mini_cart' %>
 
-<%end%>
-
-  <%= link_to "Add to cart", cart_path(increase: 1, product_id: @product.id), method: :put,
-      class: "btn btn-primary"
-  %>
-</div>
 
 <div class="span3">
 <%= render '../views/mini_cart' %>
 </div>
-
-<% if logged_in? %>
-
-  <div class="span6">
-    <h4>Two click checkout</h4>
-
-    <%-# if session[:order_id] == nil %>
-
-      <%-#= form_tag charges_path, :onclick => "return confirm('Are you sure?')" do %>
-      <%= form_tag charges_path do %>
-
-        <% @order = current_user.orders.create %>
-        <% @order.line_items.create(product_id: @product.id, quantity: 1, unit_price: @product.price) %>
-        <% session[:order_id] = @order.id %>
-
-        <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                data-description="Cart items"
-                data-amount="<%= (@product.price ) %>"></script>
-      <% end %>
-    <%-# end %>
-  </div>
-<% end %>

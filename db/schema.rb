@@ -31,8 +31,6 @@ ActiveRecord::Schema.define(:version => 20130330184028) do
     t.string   "items"
   end
 
-  add_index "carts", ["user_id"], :name => "index_carts_on_user_id"
-
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -79,6 +77,7 @@ ActiveRecord::Schema.define(:version => 20130330184028) do
     t.string   "photo"
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
+    t.string   "items"
     t.boolean  "retired",     :default => false
   end
 

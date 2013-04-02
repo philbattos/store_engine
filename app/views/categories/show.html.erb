@@ -1,19 +1,12 @@
 <h1> <%= @category.name %> </h1>
 
-<% @category.products.uniq.each do |product| %>
-  <div class="span4">
-    <h2><%= product.title %></h2>
-    <p><%= product.description %></p>
-    <p><%= product.price %><p>
-    <p><%= link_to "View details »", product_path(product), class: "btn" %></p>
-  </div>
-<% end %>
+
   <div class="row-fluid">
     <ul class="thumbnails">
       <% @category.products.each do |product| %>
         <li class="span4">
           <div class="thumbnail">
-            <%= image_tag(product.photo, size: "300x200")%>
+            <%= image_tag(product.photo)%>
             <div class="caption">
               <h3><%= product.title %></h3>
               <p><%= number_to_currency(product.price / 100) %></p>
@@ -25,3 +18,4 @@
       <% end %>
     </ul>
   </div>
+
