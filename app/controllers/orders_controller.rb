@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  load_and_authorize_resource
 
   def show
     order = Order.find_by_id(params[:id])
@@ -15,28 +16,43 @@ class OrdersController < ApplicationController
   end
 
   def index
-    if params[:filter]
-      @orders = Order.where(:status => params[:filter])
+    @statuses = @orders.collect { |order| order.status }.compact.uniq
+
+    if params[:filters]
+      @orders = Order.with_status(params[:filters])
     else
       @orders = Order.all
     end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @categories }
     end
   end
 
-  def update
-    # status = params[:order].delete(:status)
+  def edit
     @order = Order.find(params[:id])
+  end
+
+  def update
+    @order = Order.find(params[:id])
+    line_item_id = params[:line_item_id]
+    line_item = LineItem.find_by_id(line_item_id)
+    if params[:increase]
+      line_item.quantity += 1
+      line_item.save
+    elsif params[:decrease]
+      line_item.quantity -= 1
+      line_item.save
+    else
+      @order.line_items.delete(line_item)
+    end
+
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
 
-        # categories = category_ids.collect{ |id| Category.find_by_id(id) }.compact
-        # @product.categories = categories
-
-        format.html { redirect_to orders_path, notice: 'Order was successfully updated.' }
+        format.html { redirect_to edit_order_path, notice: 'Order was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
