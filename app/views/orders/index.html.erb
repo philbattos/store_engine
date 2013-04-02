@@ -1,11 +1,10 @@
-  <h1>Listing orders</h1>
-<% if false %>
-<h5>Total pending:   <%=@orders.select{ |order| order.status["pending"]}.length %></h5>
-<h5>Total canceled:  <%=@orders.select{ |order| order.status["canceled"]}.length %></h5>
-<h5>Total paid:      <%=@orders.select{ |order| order.status["paid"]}.length %></h5>
-<h5>Total shipped:   <%=@orders.select{ |order| order.status["shipped"]}.length %></h5>
-<h5>Total returned:  <%=@orders.select{ |order| order.status["returned"]}.length %></h5>
-<% end %>
+<h1>Listing orders</h1>
+
+<h5>Total pending:   <%= @orders.select{ |order| order.status == "pending"}.count %></h5>
+<h5>Total canceled:  <%= @orders.select{ |order| order.status == "canceled"}.count %></h5>
+<h5>Total paid:      <%= @orders.select{ |order| order.status == "paid"}.count %></h5>
+<h5>Total shipped:   <%= @orders.select{ |order| order.status == "shipped"}.count %></h5>
+<h5>Total returned:  <%= @orders.select{ |order| order.status == "returned"}.count %></h5>
 
 <%if false%>
 <div id="filters">

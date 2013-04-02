@@ -19,7 +19,8 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(params[:category])
+    @category = Category.find_by_name(params[:category].capitalize)
+    @category ||= Category.new(params[:category].capitalize)
 
     respond_to do |format|
       if @category.save

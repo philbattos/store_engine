@@ -2,7 +2,7 @@
   <div class="row-fluid">
 
     <% if current_user && current_user.admin %>
-      <h1>Product Management</h1><br/>
+      <h1 class="span10">Product Management</h1><br/>
       <table>
           <tr class="top-row">
             <th>Product Name</th>
@@ -15,7 +15,7 @@
           <tr class="content">
             <td class="name"><%= product.title %></td>
             <td><%= product.description %></td>
-            <td class="money"><%= number_to_currency(product.price, :unit => "$") %></td>
+            <td class="money"><%= number_to_currency(product.price / 100) %></td>
             <td><% product.categories.uniq.each do |category| %>
               <%=category.name %>
               <%end%></td>
