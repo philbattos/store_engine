@@ -1,0 +1,67 @@
+<% if current_user.admin == true %>
+  <%= render "../views/admin_order", :locals => {:order => @order} %>
+<% else %>
+  <%= render "../views/user_order", :locals => {:order => @order} %>
+<% end %>
+
+<div class="span9">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Items</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @order.line_items.each do |line_item| %>
+        <% product = Product.find_by_id(line_item.product_id) %>
+        <% unit_price = line_item.unit_price / 100.0 %>
+        <% quantity = line_item.quantity %>
+        <% sub_total = number_to_currency(unit_price * quantity) %>
+        <tr>
+          <td><%= link_to "#{product.title}", product_path(product.id) %></td>
+          <td><%= number_to_currency(unit_price) %></td>
+          <td><%= quantity %>
+            <%= link_to "+", order_path( increase: 1, line_item_id: line_item.id), method: "put", class:'button', id: "increase_count"  %>
+            <%= link_to "-", order_path( decrease: 1, line_item_id: line_item.id), method: "put", class:'button', id: "decrease_count"  %>
+            <%= link_to "Remove", order_path(line_item_id: line_item.id),
+                  method: :put, class: "btn btn-danger",
+                  confirm: "Are you sure?"%>
+          </td>
+          <td><%= sub_total %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<!-- Total Row -->
+<div class="span3">
+  <table class="table">
+    <tbody>
+      <% @sub_total = 0 %>
+      <% @order.line_items.each do |line_item| %>
+        <% unit_price = line_item.unit_price / 100.0 %>
+        <% quantity = line_item.quantity %>
+        <% @sub_total += unit_price * quantity %>
+      <% end %>
+        <tr>
+          <td><b>Subtotal:</b></th>
+            <span class="tab"><%= number_to_currency(@sub_total) %></span>
+        </tr>
+        <tr>
+          <td><b>Shipping & handling:</b></th>
+            <span class="tab2"><%= number_to_currency(0.00) %></span>
+        </tr>
+        <tr>
+          <td><b>Total:</b></th>
+            <span class="tab3"><b><%= number_to_currency(@sub_total) %></b></span>
+        </tr>
+    </tbody>
+  </table>
+
+    <%= render '../views/stripe_payment' %>
+</div>

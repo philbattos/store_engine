@@ -1,0 +1,5 @@
+<%if params[:category]["name"] != nil || params[:category]["name"] != "" %>
+  <%=   flash[:red] = "Please enter an original category name"%>
+  <%=link_to "Back", new_category_path %>
+
+<%end%>

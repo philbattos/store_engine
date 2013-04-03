@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.update_attributes(params[:product])
 
-        flash.notice = "'#{@product.title}' Updated!"
+        flash[:green] = "'#{@product.title}' Updated!"
 
         categories = category_ids.collect{ |id| Category.find_by_id(id) }.compact
         @product.categories = categories

@@ -2,8 +2,6 @@ class UsersController < ApplicationController
   load_and_authorize_resource
   skip_authorize_resource :only => [:new, :create, :account]
 
-
-
   before_filter :require_login, except: [:new, :create, :show]
   # GET /users
   # GET /users.json
