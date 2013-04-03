@@ -10,6 +10,8 @@ class Ability
         cannot :manage, :users
       else
         can :read, :products
+        can :update, :orders
+        can :manage, :account
       end
     #
     # The first argument to `can` is the action you are giving the user

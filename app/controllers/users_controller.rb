@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource #:only => [:index, :show, :destroy, :edit]
-  skip_authorize_resource :only => [:new, :create]
-  # skip_authorize_resource :only => :create
+  load_and_authorize_resource
+  skip_authorize_resource :only => [:new, :create, :account]
 
   before_filter :require_login, except: [:new, :create, :show]
   # GET /users

@@ -19,3 +19,8 @@
     </ul>
   </div>
 
+<% if current_user && current_user.admin == true %>
+
+<%= link_to "Back to manage categories", categories_path %>
+
+<%end%>
