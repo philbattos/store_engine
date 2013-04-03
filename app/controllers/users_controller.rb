@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-  load_and_authorize_resource #:only => [:index, :show, :destroy, :edit]
-  skip_authorize_resource :only => [:new, :create]
-  # skip_authorize_resource :only => :create
+  load_and_authorize_resource
+  skip_authorize_resource :only => [:new, :create, :account]
 
   before_filter :require_login, except: [:new, :create, :show]
   # GET /users
@@ -45,13 +44,16 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    email = params[:user].delete(:email)
+    down_email = email.downcase
     @user = User.new(params[:user])
+    @user.email = down_email
 
     respond_to do |format|
       if @user.save
-        flash.notice = "Account Created! Welcome #{@user.email}"
+        flash[:green] = "Account Created! Welcome #{@user.email}"
 
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to login_path, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
