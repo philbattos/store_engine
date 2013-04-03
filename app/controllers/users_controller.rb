@@ -44,7 +44,10 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    email = params[:user].delete(:email)
+    down_email = email.downcase
     @user = User.new(params[:user])
+    @user.email = down_email
 
     respond_to do |format|
       if @user.save
