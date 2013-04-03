@@ -14,7 +14,7 @@ class UserSessionsController < ApplicationController
         redirect_back_or_to(root_path, message: 'Logged in Successfully.')
       end
     else
-      flash.now.alert = "Login failed."
+      flash[:red] = "Login failed."
       render action: :new
     end
   end
