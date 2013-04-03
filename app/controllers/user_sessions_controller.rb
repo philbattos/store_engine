@@ -4,8 +4,11 @@ class UserSessionsController < ApplicationController
 
   def create
     if login(params[:login_id], params[:password])
-      admin = User.where(username: params[:login_id]).pop.admin
-      if admin == true
+
+      user = User.where(username: params[:login_id]).pop
+      user ||= User.where(email: params[:login_id]).pop
+
+      if user.admin == true
         redirect_back_or_to(admin_url, message: 'Welcome Administrator!')
       else
         redirect_back_or_to(root_path, message: 'Logged in Successfully.')
