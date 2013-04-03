@@ -186,10 +186,10 @@ home.products << camcorder
 frank = User.create(email: "demoXXfranklin@jumpstartlab.com",
                    first_name: "franklin", last_name: "webber", password: "password")
 
-jeff = User.create(user_name: "j3", email: "demoXXjeff@jumpstartlab.com",
+jeff = User.create(username: "j3", email: "demoXXjeff@jumpstartlab.com",
                    first_name: "Jeff", password: "password")
 
-steve = User.create(user_name: "SkrilleX", email: "demoXXsteve@jumpstartlab.com",
+steve = User.create(username: "SkrilleX", email: "demoXXsteve@jumpstartlab.com",
                    first_name: "Steve", last_name: "Klabnik", password: "password", admin: true)
 
 
