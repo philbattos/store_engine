@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    category_ids = params[:product].delete(:categories)
+    category_ids = params[:product].delete(:categories) || []
     @product = Product.find(params[:id])
 
     respond_to do |format|

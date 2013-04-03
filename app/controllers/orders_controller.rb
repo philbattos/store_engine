@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
   load_and_authorize_resource
+  skip_authorize_resource :only => :show
+
   def show
     order = Order.find_by_id(params[:id])
     if logged_in? && order.user_id == current_user.id
